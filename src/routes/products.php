@@ -14,19 +14,17 @@ $app->get('/products', function (Request $request, Response $response) {
 
         if ($result->rowCount() > 0) {
             $data = $result->fetchAll(PDO::FETCH_OBJ);
-            return $response->withStatus(200)
-                ->withJson([
-                    'status' => 'success',
-                    'code' => 200,
-                    'data' => $data,
-                ]);
+            return $response->withJson([
+                'status' => 'success',
+                'code' => 200,
+                'data' => $data,
+            ]);
         } else {
-            return $response->withStatus(200)
-                ->withJson([
-                    'status' => 'error',
-                    'code' => 404,
-                    'message' => 'No existen productos registrados.',
-                ]);
+            return $response->withJson([
+                'status' => 'error',
+                'code' => 404,
+                'message' => 'No existen productos registrados.',
+            ]);
         }
     } catch (PDOException $e) {
         echo '{"error" : {"text":' . $e . getMessage() . '}';
@@ -48,19 +46,17 @@ $app->get('/products/{id}', function (Request $request, Response $response, arra
 
         if ($result->rowCount() > 0) {
             $data = $result->fetchAll(PDO::FETCH_OBJ);
-            return $response->withStatus(200)
-                ->withJson([
-                    'status' => 'success',
-                    'code' => 200,
-                    'data' => $data,
-                ]);
+            return $response->withJson([
+                'status' => 'success',
+                'code' => 200,
+                'data' => $data,
+            ]);
         } else {
-            return $response->withStatus(200)
-                ->withJson([
-                    'status' => 'error',
-                    'code' => 404,
-                    'message' => 'El producto no existe.',
-                ]);
+            return $response->withJson([
+                'status' => 'error',
+                'code' => 404,
+                'message' => 'El producto no existe.',
+            ]);
         }
     } catch (PDOException $e) {
         echo '{"error" : {"text":' . $e . getMessage() . '}';
@@ -104,30 +100,27 @@ $app->post('/products', function (Request $request, Response $response, array $a
             $_input['id'] = $db->lastInsertId();
 
             if ($result->rowCount() > 0) {
-                return $response->withStatus(200)
-                    ->withJson([
-                        'status' => 'success',
-                        'code' => 200,
-                        'data' => [$_input],
-                    ]);
+                return $response->withJson([
+                    'status' => 'success',
+                    'code' => 200,
+                    'data' => [$_input],
+                ]);
             } else {
-                return $response->withStatus(200)
-                    ->withJson([
-                        'status' => 'error',
-                        'code' => 404,
-                        'message' => 'Producto no creado.',
-                    ]);
+                return $response->withJson([
+                    'status' => 'error',
+                    'code' => 404,
+                    'message' => 'Producto no creado.',
+                ]);
             }
         } catch (PDOException $e) {
             echo '{"error" : {"text":' . $e . getMessage() . '}';
         }
     } else {
-        return $response->withStatus(200)
-            ->withJson([
-                'status' => 'error',
-                'code' => 404,
-                'message' => 'Producto no creado, verifique los datos ingresados.',
-            ]);
+        return $response->withJson([
+            'status' => 'error',
+            'code' => 404,
+            'message' => 'Producto no creado, verifique los datos ingresados.',
+        ]);
     }
 });
 
@@ -164,30 +157,27 @@ $app->put('/products/{id}', function (Request $request, Response $response, arra
             $result->execute();
 
             if ($result->rowCount() > 0) {
-                return $response->withStatus(200)
-                    ->withJson([
-                        'status' => 'success',
-                        'code' => 200,
-                        'data' => [$_input],
-                    ]);
+                return $response->withJson([
+                    'status' => 'success',
+                    'code' => 200,
+                    'data' => [$_input],
+                ]);
             } else {
-                return $response->withStatus(200)
-                    ->withJson([
-                        'status' => 'error',
-                        'code' => 404,
-                        'message' => 'Producto no actualizado.',
-                    ]);
+                return $response->withJson([
+                    'status' => 'error',
+                    'code' => 404,
+                    'message' => 'Producto no actualizado.',
+                ]);
             }
         } catch (PDOException $e) {
             echo '{"error" : {"text":' . $e . getMessage() . '}';
         }
     } else {
-        return $response->withStatus(200)
-            ->withJson([
-                'status' => 'error',
-                'code' => 404,
-                'message' => 'Producto no actualizado, verifique los datos ingresados.',
-            ]);
+        return $response->withJson([
+            'status' => 'error',
+            'code' => 404,
+            'message' => 'Producto no actualizado, verifique los datos ingresados.',
+        ]);
     }
 });
 
