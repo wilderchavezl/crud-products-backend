@@ -1,0 +1,8 @@
+{
+    "products": {
+        "name": "producto prueba",
+        "brand": "brand prueba",
+        "price": 1.0,
+        "stock": 1
+    }
+}
