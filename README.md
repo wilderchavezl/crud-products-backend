@@ -1,4 +1,4 @@
-# products-backend
+# crud-products-backend
 
 Los servicios se realizaron en PHP con el uso del Framework Slim en su versión 3 y la base de datos en MySQL.
 
