@@ -22,4 +22,4 @@ interface Response {
 }
 ```
 
-![Captura](https://raw.githubusercontent.com/wilderchavezl/crud-backend-app/master/resources/capture-db.png)
+![Captura](https://raw.githubusercontent.com/wilderchavezl/crud-products-backend/master/resources/capture-db.jpg)
