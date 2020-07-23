@@ -21,3 +21,5 @@ interface Response {
     stock: int;
 }
 ```
+
+![Captura](https://raw.githubusercontent.com/wilderchavezl/crud-backend-app/master/resources/capture-db.png)
